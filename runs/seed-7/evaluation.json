@@ -1,0 +1,410 @@
+{
+  "training_seed": 7,
+  "steps": 131072,
+  "training_seconds_including_validation": 77.24952010900006,
+  "evaluation_policy": "deterministic",
+  "initial": [
+    {
+      "seed": 1000,
+      "return": -2.4021382566240344,
+      "steps": 240,
+      "success": false,
+      "distance": 3.4062054543835316,
+      "speed": 3.534553740140823e-05,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1001,
+      "return": -2.401199459672609,
+      "steps": 240,
+      "success": false,
+      "distance": 2.5238062951919296,
+      "speed": 2.0452107603194306e-05,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1002,
+      "return": -2.4036548513247733,
+      "steps": 240,
+      "success": false,
+      "distance": 3.0365287286790945,
+      "speed": 6.318958655829105e-05,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1003,
+      "return": -2.404079787919921,
+      "steps": 240,
+      "success": false,
+      "distance": 2.885883444875097,
+      "speed": 9.25174864088535e-05,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1004,
+      "return": -2.4023251554152836,
+      "steps": 240,
+      "success": false,
+      "distance": 2.695694045406784,
+      "speed": 0.00010570374220284283,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1005,
+      "return": -2.4041079991930876,
+      "steps": 240,
+      "success": false,
+      "distance": 3.8966675282523475,
+      "speed": 0.00012648953608909345,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1006,
+      "return": -2.404208364985013,
+      "steps": 240,
+      "success": false,
+      "distance": 3.4021393497161183,
+      "speed": 7.552377754732816e-05,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1007,
+      "return": -2.4038619351567494,
+      "steps": 240,
+      "success": false,
+      "distance": 3.7247457003325546,
+      "speed": 0.00012408464625295827,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1008,
+      "return": -2.404679584193578,
+      "steps": 240,
+      "success": false,
+      "distance": 3.7205184851087307,
+      "speed": 0.00011124802618229199,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1009,
+      "return": -2.403189385354305,
+      "steps": 240,
+      "success": false,
+      "distance": 2.991014969017131,
+      "speed": 0.00010901608968494042,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1010,
+      "return": -2.403819133003842,
+      "steps": 240,
+      "success": false,
+      "distance": 3.304477009189882,
+      "speed": 0.00011236113882477298,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1011,
+      "return": -2.4044497175257242,
+      "steps": 240,
+      "success": false,
+      "distance": 3.345886208750861,
+      "speed": 8.499732691309796e-05,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1012,
+      "return": -2.40458353855269,
+      "steps": 240,
+      "success": false,
+      "distance": 3.671897764341788,
+      "speed": 8.506015389649145e-05,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1013,
+      "return": -2.3996839766168194,
+      "steps": 240,
+      "success": false,
+      "distance": 2.618418596620408,
+      "speed": 7.308560793905871e-06,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1014,
+      "return": -2.4032477632613216,
+      "steps": 240,
+      "success": false,
+      "distance": 3.379217229062122,
+      "speed": 5.445048363638842e-05,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1015,
+      "return": -2.4040362369495605,
+      "steps": 240,
+      "success": false,
+      "distance": 3.411421770360853,
+      "speed": 7.091300971082568e-05,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1016,
+      "return": -2.4043906835487587,
+      "steps": 240,
+      "success": false,
+      "distance": 3.1649287096123255,
+      "speed": 9.1745445134256e-05,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1017,
+      "return": -2.3986344830772746,
+      "steps": 240,
+      "success": false,
+      "distance": 3.7317329152917824,
+      "speed": 4.298901657123444e-05,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1018,
+      "return": -2.4012028269812085,
+      "steps": 240,
+      "success": false,
+      "distance": 3.1826944554601266,
+      "speed": 2.023262525542586e-05,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1019,
+      "return": -2.404322699334927,
+      "steps": 240,
+      "success": false,
+      "distance": 3.0948664691032013,
+      "speed": 9.223502683784653e-05,
+      "tipped": false,
+      "time": 12.0
+    }
+  ],
+  "final": [
+    {
+      "seed": 1000,
+      "return": 29.894398483334736,
+      "steps": 96,
+      "success": true,
+      "distance": 0.19061594897915063,
+      "speed": 0.23852705702523797,
+      "tipped": false,
+      "time": 4.800000000000001
+    },
+    {
+      "seed": 1001,
+      "return": 6.360675584550054,
+      "steps": 240,
+      "success": false,
+      "distance": 0.7479533090851839,
+      "speed": 0.0008720185587808108,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1002,
+      "return": 7.828787243465661,
+      "steps": 240,
+      "success": false,
+      "distance": 0.9452606265028404,
+      "speed": 0.003538842357858409,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1003,
+      "return": 2.1747260703713236,
+      "steps": 240,
+      "success": false,
+      "distance": 1.883662347236781,
+      "speed": 0.05843916669192345,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1004,
+      "return": -1.1339442129851511,
+      "steps": 240,
+      "success": false,
+      "distance": 2.335040164972799,
+      "speed": 0.07873170512687659,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1005,
+      "return": 1.5768075851766632,
+      "steps": 240,
+      "success": false,
+      "distance": 2.964809619280868,
+      "speed": 0.13017673073962868,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1006,
+      "return": 7.716287440300195,
+      "steps": 240,
+      "success": false,
+      "distance": 1.3145377173392427,
+      "speed": 0.01846855545457088,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1007,
+      "return": 1.1234332006367387,
+      "steps": 240,
+      "success": false,
+      "distance": 2.8869548836147634,
+      "speed": 0.0925271454181859,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1008,
+      "return": 3.1696025783637736,
+      "steps": 240,
+      "success": false,
+      "distance": 2.487718404564291,
+      "speed": 0.1062298455468279,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1009,
+      "return": -0.036995742278547766,
+      "steps": 240,
+      "success": false,
+      "distance": 2.4070301657129365,
+      "speed": 0.08997790348777825,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1010,
+      "return": 0.9685911842120184,
+      "steps": 240,
+      "success": false,
+      "distance": 2.5140770034978286,
+      "speed": 0.14511848667014804,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1011,
+      "return": 5.746290382304574,
+      "steps": 240,
+      "success": false,
+      "distance": 1.637560841863677,
+      "speed": 0.05762221153031508,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1012,
+      "return": 7.430755316852138,
+      "steps": 240,
+      "success": false,
+      "distance": 1.6249442064114024,
+      "speed": 0.02578931230650071,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1013,
+      "return": 2.046760953833683,
+      "steps": 240,
+      "success": false,
+      "distance": 1.6603968387050545,
+      "speed": 0.06885747816322212,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1014,
+      "return": 11.232373136413827,
+      "steps": 240,
+      "success": false,
+      "distance": 0.6168619108605061,
+      "speed": 0.0013260869147945346,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1015,
+      "return": 8.433337337121317,
+      "steps": 240,
+      "success": false,
+      "distance": 1.1868668934124362,
+      "speed": 0.007527348079792613,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1016,
+      "return": 3.7224695541099577,
+      "steps": 240,
+      "success": false,
+      "distance": 1.8519664778193101,
+      "speed": 0.05431841868417071,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1017,
+      "return": 0.9829167112788669,
+      "steps": 240,
+      "success": false,
+      "distance": 2.9105691860555543,
+      "speed": 0.10867315729286889,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1018,
+      "return": 9.456008005113862,
+      "steps": 240,
+      "success": false,
+      "distance": 0.7818201928870507,
+      "speed": 0.001065953870315812,
+      "tipped": false,
+      "time": 12.0
+    },
+    {
+      "seed": 1019,
+      "return": 3.2460924458765463,
+      "steps": 240,
+      "success": false,
+      "distance": 1.8766040160105721,
+      "speed": 0.05450219517671615,
+      "tipped": false,
+      "time": 12.0
+    }
+  ]
+}

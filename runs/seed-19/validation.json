@@ -1,0 +1,50 @@
+[
+  {
+    "steps": 16384,
+    "mean_return": 3.3392188046991818,
+    "successes": 0,
+    "episodes": 5
+  },
+  {
+    "steps": 32768,
+    "mean_return": 2.919641949717178,
+    "successes": 0,
+    "episodes": 5
+  },
+  {
+    "steps": 49152,
+    "mean_return": 2.9900815154155094,
+    "successes": 0,
+    "episodes": 5
+  },
+  {
+    "steps": 65536,
+    "mean_return": 2.6908827889508324,
+    "successes": 0,
+    "episodes": 5
+  },
+  {
+    "steps": 81920,
+    "mean_return": 2.74350681303929,
+    "successes": 0,
+    "episodes": 5
+  },
+  {
+    "steps": 98304,
+    "mean_return": 3.279281345724212,
+    "successes": 0,
+    "episodes": 5
+  },
+  {
+    "steps": 114688,
+    "mean_return": 3.273458877640634,
+    "successes": 0,
+    "episodes": 5
+  },
+  {
+    "steps": 131072,
+    "mean_return": 3.528186874585491,
+    "successes": 0,
+    "episodes": 5
+  }
+]

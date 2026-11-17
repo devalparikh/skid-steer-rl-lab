@@ -1,0 +1,53 @@
+<mujoco model="procedural skid steer">
+  <compiler angle="radian"/>
+  <option timestep="0.005" integrator="implicitfast" cone="elliptic"/>
+  <visual><global offwidth="960" offheight="640"/><quality shadowsize="2048"/></visual>
+  <default>
+    <joint damping="2"/>
+    <geom friction="0.8 0.01 0.001" condim="3" solref="0.01 1"/>
+  </default>
+  <asset>
+    <texture name="ground" type="2d" builtin="checker" rgb1="0.18 0.22 0.25" rgb2="0.22 0.26 0.29" width="512" height="512"/>
+    <material name="ground" texture="ground" texrepeat="12 12" texuniform="true"/>
+    <material name="yellow" rgba="0.92 0.61 0.12 1"/>
+    <material name="steel" rgba="0.16 0.19 0.22 1"/>
+    <material name="glass" rgba="0.20 0.43 0.53 0.85"/>
+    <material name="tire" rgba="0.06 0.07 0.08 1"/>
+  </asset>
+  <worldbody>
+    <light pos="0 -3 7" dir="0 0 -1" diffuse="0.9 0.9 0.9"/>
+    <geom name="floor" type="plane" size="12 12 0.1" material="ground"/>
+    <site name="goal" pos="3 0 0.025" type="cylinder" size="0.3 0.015" rgba="0.2 0.85 0.6 0.7"/>
+    <body name="chassis" pos="0 0 0.66">
+      <freejoint/>
+      <geom name="body" type="box" size="0.8 0.43 0.24" mass="4200" material="yellow"/>
+      <geom type="box" pos="-0.15 0 0.55" size="0.42 0.37 0.35" mass="150" material="steel"/>
+      <geom type="box" pos="0.28 0 0.55" size="0.015 0.31 0.28" mass="1" material="glass"/>
+      <geom type="box" pos="-0.15 0 0.93" size="0.47 0.43 0.035" mass="20" material="yellow"/>
+      <body name="front_left" pos="0.56 0.53 -0.33"><joint name="fl" axis="0 1 0"/><geom type="cylinder" size="0.33 0.14" quat="0.707107 0.707107 0 0" mass="60" material="tire"/></body>
+      <body name="front_right" pos="0.56 -0.53 -0.33"><joint name="fr" axis="0 1 0"/><geom type="cylinder" size="0.33 0.14" quat="0.707107 0.707107 0 0" mass="60" material="tire"/></body>
+      <body name="rear_left" pos="-0.56 0.53 -0.33"><joint name="rl" axis="0 1 0"/><geom type="cylinder" size="0.33 0.14" quat="0.707107 0.707107 0 0" mass="60" material="tire"/></body>
+      <body name="rear_right" pos="-0.56 -0.53 -0.33"><joint name="rr" axis="0 1 0"/><geom type="cylinder" size="0.33 0.14" quat="0.707107 0.707107 0 0" mass="60" material="tire"/></body>
+      <body name="arm" pos="-0.5 0 0.25">
+        <joint name="lift" axis="0 1 0" range="-0.7 0.4" limited="true" damping="300"/>
+        <geom type="capsule" fromto="0 0.44 0 1.7 0.44 -0.3" size="0.06" mass="100" material="yellow"/>
+        <geom type="capsule" fromto="0 -0.44 0 1.7 -0.44 -0.3" size="0.06" mass="100" material="yellow"/>
+        <body name="bucket" pos="1.7 0 -0.3">
+          <joint name="curl" axis="0 1 0" range="-0.8 0.5" limited="true" damping="200"/>
+          <geom type="box" pos="0.2 0 -0.17" size="0.38 0.65 0.035" mass="130" material="steel"/>
+          <geom type="box" pos="-0.15 0 0" size="0.035 0.65 0.2" mass="60" material="steel"/>
+          <geom type="box" pos="0.2 0.62 0" size="0.38 0.03 0.18" mass="10" material="steel"/>
+          <geom type="box" pos="0.2 -0.62 0" size="0.38 0.03 0.18" mass="10" material="steel"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <velocity joint="fl" kv="900" ctrlrange="-7 7" forcerange="-3500 3500"/>
+    <velocity joint="fr" kv="900" ctrlrange="-7 7" forcerange="-3500 3500"/>
+    <velocity joint="rl" kv="900" ctrlrange="-7 7" forcerange="-3500 3500"/>
+    <velocity joint="rr" kv="900" ctrlrange="-7 7" forcerange="-3500 3500"/>
+    <position joint="lift" kp="50000" kv="5000" ctrlrange="-0.7 0.4"/>
+    <position joint="curl" kp="20000" kv="2000" ctrlrange="-0.8 0.5"/>
+  </actuator>
+</mujoco>
