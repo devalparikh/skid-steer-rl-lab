@@ -62,3 +62,26 @@ Re-running the commands overwrites the corresponding seed's outputs. Preserve pr
 ## License
 
 Original code, procedural MJCF model and generated artifacts: MIT, see LICENSE. Dependencies retain their own licenses: MuJoCo (Apache-2.0), Gymnasium (MIT), Stable-Baselines3 (MIT), PyTorch (BSD-style). Research links and names identify inspiration only; no endorsement or affiliation is implied.
+
+## Inspect one training update
+
+Run `python trace_training.py` from the repository root after installation. This loads the
+saved seed-7 final checkpoint, seeds a **fresh diagnostic collection** with 2026, and uses
+SB3's collector to create a 512 × 4 rollout buffer. It takes one shuffled 256-row minibatch
+and performs one additional Adam step in memory, with the run's advantage normalization,
+clipped PPO loss, value loss, entropy bonus, and gradient clipping. It never saves over a
+checkpoint or changes the reported two-run evaluation.
+
+`artifacts/training-trace.json` contains the full buffer, environment rewards before time-limit
+bootstrapping, next/reset observations and terminal observations, the minibatch, and before/after
+network outputs. `training-example.json` selects its first minibatch row and records the buffer
+coordinates and checkpoint SHA-256. Values are real extracted numbers, **not recovered historical
+training rows**. Exact reproduction uses the pinned versions; different platforms may round differently.
+The script uses SB3 internal collector APIs and is tied to the locked SB3 version.
+
+Actions in the buffer are Gaussian samples before clipping; the environment receives their
+clipped [-1, 1] versions. Log probabilities are joint log densities of those original samples.
+The timeout flag distinguishes truncation from termination. On timeout SB3 adds a discounted
+terminal-state value to the stored reward, then prevents GAE from crossing into the reset episode.
+The last collection step also bootstraps from the final observation when the episode continues.
+Neither a value target nor an advantage is a labeled correct wheel command.
