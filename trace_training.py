@@ -4,6 +4,7 @@ Does not change checkpoints or claim to recover the original training buffer.
 """
 
 import hashlib
+import io
 import json
 from pathlib import Path
 
@@ -14,6 +15,18 @@ from stable_baselines3.common.callbacks import BaseCallback
 from stable_baselines3.common.vec_env import DummyVecEnv
 
 from skid_steer_rl import LoaderEnv
+
+ROOT = Path(__file__).resolve().parent
+CHECKPOINT_SHA256 = "a9d65a3ce907b027a876008ae0210e29e34daf186e081c987f84e77aa7ba3fe3"
+
+
+def load_bundled_checkpoint(env):
+    """Verify the reviewed archive before SB3 can deserialize any metadata."""
+    checkpoint_bytes = (ROOT / "runs/seed-7/final.zip").read_bytes()
+    digest = hashlib.sha256(checkpoint_bytes).hexdigest()
+    if digest != CHECKPOINT_SHA256:
+        raise ValueError("Bundled checkpoint SHA-256 mismatch; refusing to deserialize")
+    return PPO.load(io.BytesIO(checkpoint_bytes), env=env, device="cpu"), digest
 
 
 class Capture(BaseCallback):
@@ -42,9 +55,8 @@ class Capture(BaseCallback):
 
 def extract():
     torch.set_num_threads(1)
-    checkpoint = Path("runs/seed-7/final.zip")
     env = DummyVecEnv([lambda: LoaderEnv() for _ in range(4)])
-    model = PPO.load(checkpoint, env=env, device="cpu")
+    model, checkpoint_digest = load_bundled_checkpoint(env)
     model.set_random_seed(2026)
     _, callback = model._setup_learn(2048, Capture(), reset_num_timesteps=False)
     callback.on_training_start(locals(), globals())
@@ -109,7 +121,7 @@ def extract():
     _, after = outputs()
     result = {
         "provenance": "Fresh diagnostic collection from seed-7 final checkpoint; not the historical training buffer. One additional Adam minibatch step in memory only.",
-        "checkpoint_sha256": hashlib.sha256(checkpoint.read_bytes()).hexdigest(),
+        "checkpoint_sha256": checkpoint_digest,
         "collection_seed": 2026,
         "gamma": 0.99,
         "gae_lambda": 0.95,

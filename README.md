@@ -66,7 +66,7 @@ Original code, procedural MJCF model and generated artifacts: MIT, see LICENSE. 
 ## Inspect one training update
 
 Run `python trace_training.py` from the repository root after installation. This loads the
-saved seed-7 final checkpoint, seeds a **fresh diagnostic collection** with 2026, and uses
+saved seed-7 final checkpoint after verifying its pinned SHA-256, seeds a **fresh diagnostic collection** with 2026, and uses
 SB3's collector to create a 512 × 4 rollout buffer. It takes one shuffled 256-row minibatch
 and performs one additional Adam step in memory, with the run's advantage normalization,
 clipped PPO loss, value loss, entropy bonus, and gradient clipping. It never saves over a
@@ -85,3 +85,8 @@ The timeout flag distinguishes truncation from termination. On timeout SB3 adds 
 terminal-state value to the stored reward, then prevents GAE from crossing into the reset episode.
 The last collection step also bootstraps from the final observation when the episode continues.
 Neither a value target nor an advantage is a labeled correct wheel command.
+
+The trace script resolves the checkpoint relative to its own file and loads the same bytes it
+verified. It refuses replaced or locally retrained checkpoints; the pinned digest identifies the
+reviewed bundled model. Checkpoint deserialization still requires trusting this repository's code
+and reviewed model, not just a checksum supplied alongside an unknown download.
