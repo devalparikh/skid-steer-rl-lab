@@ -4,6 +4,10 @@ A real, deliberately small reinforcement-learning project: a procedural 3D skid-
 
 Inspired by [Heavy Metal Acrobatics](https://arxiv.org/abs/2611.18365), which controls an actual John Deere 332G. **This is an original simplified model, not manufacturer CAD, the paper's simulator, or a reproduction of its wheelies.** No external meshes, footage, textures, or weights are redistributed. There is no hardware-control interface.
 
+![Procedural MuJoCo loader](artifacts/seed-7-final-episode-1000.png)
+
+Watch real simulator rollouts: [initial policy](artifacts/seed-7-initial-episode-1000.mp4), [trained seed 7](artifacts/seed-7-final-episode-1000.mp4), [trained seed 19](artifacts/seed-19-final-episode-1000.mp4). Read [all test outcomes](RESULTS.md): the seed-7 clip is its only successful parking attempt out of 20.
+
 ## Run
 
 Python 3.12 on Linux was used for the checked-in runs. Install CPU PyTorch first to avoid CUDA downloads:
